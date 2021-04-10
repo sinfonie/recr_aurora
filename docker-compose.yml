@@ -1,0 +1,31 @@
+version: "3.2"
+services:
+    db:
+      image: mysql:5.7
+      volumes:
+        - aurora_volume:/var/lib/mysql
+      restart: always
+      environment:
+        MYSQL_DATABASE: aurora
+        MYSQL_USER: aurora
+        MYSQL_PASSWORD: aurora
+        MYSQL_ROOT_PASSWORD: pass
+      ports:
+      - "9906:3306"
+    phpmyadmin:
+      depends_on:
+        - db
+      image: phpmyadmin/phpmyadmin:latest
+      ports:
+       - "9001:80"
+      restart: always
+    web:
+      image: php:7.4-apache
+      build: .
+      ports:
+        - 80:80
+      volumes:
+        - ./recr_aurora:/var/www/html/
+        - ./uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
+volumes:
+    aurora_volume: {}
