@@ -25,7 +25,7 @@ services:
       ports:
         - 80:80
       volumes:
-        - ./recr_aurora:/var/www/html/
+        - ./aurora:/var/www/html/
         - ./uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
 volumes:
     aurora_volume: {}
