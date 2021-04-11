@@ -24,7 +24,7 @@ class Article extends Page
     $output = '';
     if (!empty($this->data)) {
       $output .= '<form id="edit-form" method="post"></form>';
-      $output .= '<form id="delete-form" method="post"></form>';
+      $output .= '<form id="delete-form" action="/articles" method="post"></form>';
       foreach ($this->data as $key => $value) {
         $output .= '<div class="row row-cols-3 m-1 border-bottom p-2">
                       <div class="col">' . $key . '</div>

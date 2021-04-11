@@ -49,7 +49,7 @@ class Router
   {
     $collector = new RouteCollector();
     foreach ($this->routes as $path => $params) {
-      $collector->get($path, function ($id = null) use ($params) {
+      $collector->any($path, function ($id = null) use ($params) {
         if ($params) {
           $params['params'] = $id;
         }

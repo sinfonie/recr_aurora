@@ -52,7 +52,7 @@ class View
   <nav class="navbar navbar-light bg-light">
     <a class="btn btn-dark" href="/">Powrót</a>
     <form id="drop-database" method="post"></form>
-    <button form="drop-database" class="btn btn-danger btn-sm" role="button" name="db_drop" value="article">Zrzuć bazę</button>
+    <button form="drop-database" class="btn btn-danger" role="button" name="db_drop" value="article">Zrzuć bazę</button>
   </nav>
 </div>
 ';
